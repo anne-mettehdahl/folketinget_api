@@ -1,0 +1,41 @@
+library(RCurl)
+library(stringr)
+library(purrr)
+
+hent_ftp_listing <- function(base_url) {
+  tryCatch(
+    getURL(base_url, ftp.use.epsv = FALSE) %>%
+      strsplit("\n") %>%
+      unlist() %>%
+      trimws(),
+    error = function(e) {
+      message("Error with getting FTP listing: ", e$message)
+      character(0)
+    }
+  )
+}
+
+list_samlinger <- function(base_url = "ftp://oda.ft.dk/ODAXML/Referat/samling/") {
+  res <- tryCatch(
+    system2("curl", args = c("-s", "-l", base_url), stdout = TRUE),
+    error = function(e) character(0)
+  )
+  samlinger <- res[stringr::str_detect(res, "^\\d{5}$")]
+  return(samlinger)
+}
+
+count_of_meetings <- function(samling_id, base_url) {
+  samling_url <- paste0(base_url, samling_id, "/")
+  tryCatch(
+    getURL(samling_url, ftp.use.epsv = FALSE, dirlistonly = TRUE) %>%
+      strsplit("\n") %>%
+      unlist() %>%
+      trimws() %>%
+      stringr::str_detect("\\.xml$") %>%
+      sum(),
+    error = function(e) {
+      message("Error while retrieving files for samling ", samling_id, ": ", e$message)
+      0
+    }
+  )
+}
