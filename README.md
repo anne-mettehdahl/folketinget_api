@@ -14,7 +14,7 @@ Funktionalitet: Projektet indeholder funktioner til:
 - Henting og parsing af mappe- og fillister fra en offentlig FTP
 - Overblik over samlinger og antal møder pr. år
 - Hentning af XML-filer for specifikke møder
-- Parsing af mødeindhold (talere, dagsordenspunkter, talerens navn, gruppe, titel, tidspunk mv.).
+- Parsing af mødeindhold (talere, dagsordenspunkter, talerens navn, gruppe, titel, tidspunkt mv.).
  Mulighed for filtrering på samling, mødenummer og taler.
 - Automatisk retry ved fejl og progress-bar ved mange filer
 - Gem data til .csv.
@@ -66,6 +66,8 @@ Funktionalitet: Projektet indeholder funktioner til:
 | `since`  | Date eller POSIXct | Dato hvorfra man vil tjekke for opdateringer. Default er i går (`Sys.Date() - 1`). |
 
 
+**meeting_data_rds**: 
+hent_og_parse_moedefiler() er kørt den 25/06-2025 og gemt i mappen "meeting_data_rds"
 
 
 
