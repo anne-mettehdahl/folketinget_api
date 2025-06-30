@@ -2,10 +2,14 @@
 
 ## Beskrivelse
 
-Dette projekt indeholder en samling af R-scripts, der henter, parser og producere rensede datasæt. Projektet er opdelt i moduler for at sikre god struktur, genbrug og nem vedligeholdelse.
+Dette projekt indeholder en samling af R-scripts, der henter, parser og producerer rensede datasæt. Projektet er opdelt i moduler for at sikre god struktur, genbrug og nem vedligeholdelse.
 
-Formålet er at automatisere processen med at hente mødefiler (fx fra FTP), parse XML-data, og producere rensede datasæt til videre analyse.
+Målet er at automatisere arbejdet med at hente og bearbejde referater fra Folketingets forhandlinger. 
+Referaterne fra møderne findes som XML-filer via en FTP-server og kan findes på [Folketingets hjemmeside](https://www.ft.dk/da/dokumenter/dokumentlister/referater). 
+Disse data parses og renses, så de er klar til videre analyse.
 
+
+Mødefilerne er referater 
 ---
 
 ## Funktionalitet

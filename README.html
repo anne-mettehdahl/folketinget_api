@@ -357,12 +357,16 @@ display: none;
 <div id="beskrivelse" class="section level2">
 <h2>Beskrivelse</h2>
 <p>Dette projekt indeholder en samling af R-scripts, der henter, parser
-og producere rensede datasæt. Projektet er opdelt i moduler for at sikre
-god struktur, genbrug og nem vedligeholdelse.</p>
-<p>Formålet er at automatisere processen med at hente mødefiler (fx fra
-FTP), parse XML-data, og producere rensede datasæt til videre
+og producerer rensede datasæt. Projektet er opdelt i moduler for at
+sikre god struktur, genbrug og nem vedligeholdelse.</p>
+<p>Målet er at automatisere arbejdet med at hente og bearbejde referater
+fra Folketingets forhandlinger. Referaterne fra møderne findes som
+XML-filer via en FTP-server og kan findes på <a href="https://www.ft.dk/da/dokumenter/dokumentlister/referater">Folketingets
+hjemmeside</a>. Disse data parses og renses, så de er klar til videre
 analyse.</p>
-<hr />
+</div>
+<div id="mødefilerne-er-referater" class="section level2">
+<h2>Mødefilerne er referater</h2>
 </div>
 <div id="funktionalitet" class="section level2">
 <h2>Funktionalitet</h2>
@@ -372,7 +376,7 @@ analyse.</p>
 <li>Overblik over samlinger og antal møder pr. år</li>
 <li>Hentning af XML-filer for specifikke møder</li>
 <li>Parsing af mødeindhold (talere, dagsordenspunkter, talerens navn,
-gruppe, titel, tidspunk mv.). Mulighed for filtrering på samling,
+gruppe, titel, tidspunkt mv.). Mulighed for filtrering på samling,
 mødenummer og taler.</li>
 <li>Automatisk retry ved fejl og progress-bar ved mange filer</li>
 <li>Gem data til .csv.</li>
@@ -489,6 +493,8 @@ vedkommende.</td>
 </tr>
 </tbody>
 </table>
+<p><strong>meeting_data_rds</strong>: hent_og_parse_moedefiler() er kørt
+den 25/06-2025 og gemt i mappen “meeting_data_rds”</p>
 </div>
 </div>
 
